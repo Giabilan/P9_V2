@@ -207,29 +207,33 @@ fix(Dashboard): séparer les états liste et édition des tickets
 
 ---
 
-## Étape 5 — Tests d'intégration Bills
+## Étape 5 — Tests d'intégration Bills & NewBill
 
-**Fichier** : `frontend/src/__tests__/Bills.js`  
-**Statut** : ⏳ En attente
+**Statut** : ✅ Terminé — 17/07/2026  
+**Rapport** : [05-tests-couverture.md](./05-tests-couverture.md)  
+**Contrainte** : fichiers OC `Bills.js` / `NewBill.js` (tests) **non modifiés**
 
 ### Avant
 
 | Métrique | Valeur |
 |----------|--------|
-| Couverture `Bills.js` | 24,24 % |
-| Tests d'intégration GET/404/500 | ❌ Absents |
+| All files | 67,18 % |
+| Bills.js | 22,86 % |
+| NewBill.js | 13,73 % |
 
 ### Après
 
 | Métrique | Valeur |
 |----------|--------|
-| Couverture `Bills.js` | — |
-| Tests d'intégration GET/404/500 | — |
+| All files | **87,31 %** |
+| Bills.js | **88,57 %** |
+| NewBill.js | **96,08 %** |
+| Fichiers ajoutés | `Bills.integration.js`, `NewBill.integration.js` |
 
 ### Commit
 
 ```
-—
+test: ajouter Bills.integration.js et NewBill.integration.js (couverture ≥ 80%)
 ```
 
 ---
@@ -294,8 +298,8 @@ fix(Dashboard): séparer les états liste et édition des tickets
 | 2 | Bills (tri) | ✅ | 0 | 0 | 69,58 % |
 | 3 | NewBill (fichier) | ✅ | 0 | 0 | 67,08 % |
 | 4 | Dashboard | ✅ | 0 | 0 | 67,08 % |
-| 5 | Tests Bills | ⏳ | — | — | — |
-| 6 | Tests NewBill | ⏳ | — | — | — |
+| 5 | Tests Bills | ✅ | 0 | 0 | 87,31 % |
+| 6 | Tests NewBill | ✅ | 0 | 0 | 87,31 % (fait avec étape 5) |
 | 7 | Plan E2E | ⏳ | — | — | — |
 | **Final** | **Tout** | ⏳ | **—** | **—** | **—** |
 
@@ -310,3 +314,4 @@ fix(Dashboard): séparer les états liste et édition des tickets
 | 10/07/2026 | Étape 2 — Bills | 11 / 0 | 43 / 0 | 69,58 % | Tri des notes de frais corrigé — tous les tests passent |
 | 10/07/2026 | Étape 3 — NewBill | 11 / 0 | 43 / 0 | 67,08 % | Validation justificatif jpg/jpeg/png |
 | 10/07/2026 | Étape 4 — Dashboard | 11 / 0 | 43 / 0 | 67,08 % | Sélection tickets après ouverture multi-listes |
+| 17/07/2026 | Étape 5 — Couverture | 13 / 0 | 56 / 0 | 87,31 % | Nouveaux *.integration.js ; OC tests inchangés |

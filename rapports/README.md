@@ -8,6 +8,7 @@ Ce dossier contient un rapport détaillé par bug corrigé, dans l'ordre de rés
 | 02 | [Bug Bills — Tri des notes de frais](./02-bug-bills.md) | Bug report — Bills | ✅ Corrigé |
 | 03 | [Bug NewBill — Validation du justificatif](./03-bug-newbill.md) | Bug hunt — Bills | ✅ Corrigé |
 | 04 | [Bug Dashboard — Sélection des tickets](./04-bug-dashboard.md) | Bug hunt — Dashboard | ✅ Corrigé |
+| 05 | [Tests couverture Bills & NewBill](./05-tests-couverture.md) | Tests intégration (nouveaux fichiers) | ✅ ≥ 80 % |
 
 ## Convention de nommage
 
