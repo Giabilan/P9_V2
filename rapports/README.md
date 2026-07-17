@@ -1,0 +1,23 @@
+# Rapports de correction — Billed P9
+
+Ce dossier contient un rapport détaillé par bug corrigé, dans l'ordre de résolution.
+
+| # | Rapport | Bug | Statut |
+|---|---------|-----|--------|
+| 01 | [Bug Login — Connexion administrateur](./01-bug-login.md) | Bug report — Login | ✅ Corrigé |
+| 02 | [Bug Bills — Tri des notes de frais](./02-bug-bills.md) | Bug report — Bills | ✅ Corrigé |
+| 03 | [Bug NewBill — Validation du justificatif](./03-bug-newbill.md) | Bug hunt — Bills | ✅ Corrigé |
+| 04 | [Bug Dashboard — Sélection des tickets](./04-bug-dashboard.md) | Bug hunt — Dashboard | ✅ Corrigé |
+
+## Convention de nommage
+
+```
+XX-bug-<nom>.md
+```
+
+- `XX` : numéro d'étape (01, 02, 03…)
+- `<nom>` : identifiant court du bug
+
+## Suivi global
+
+Voir également : [SUIVI.md](../frontend/SUIVI.md)
