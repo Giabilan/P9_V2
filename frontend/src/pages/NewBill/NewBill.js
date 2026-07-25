@@ -33,12 +33,19 @@ export const initNewBillPage = ({
   new Logout({ document, localStorage, onNavigate });
 };
 
+const ALLOWED_EXTENSIONS = ["jpg", "jpeg", "png"];
+const ALLOWED_MIME_TYPES = ["image/jpeg", "image/jpg", "image/png"];
+
 /**
- * Vérifie que le fichier est au format jpg, jpeg ou png
+ * Vérifie extension + type MIME (jpg, jpeg ou png).
+ * `accept` seul est contournable via « Tous les fichiers ».
  */
-const isValidFileFormat = (fileName) => {
-  const extension = fileName.split(".").pop().toLowerCase();
-  return ["jpg", "jpeg", "png"].includes(extension);
+const isValidFileFormat = (file) => {
+  const extension = file.name.split(".").pop().toLowerCase();
+  const hasValidExtension = ALLOWED_EXTENSIONS.includes(extension);
+  const hasValidMimeType =
+    !file.type || ALLOWED_MIME_TYPES.includes(file.type);
+  return hasValidExtension && hasValidMimeType;
 };
 
 /**
@@ -54,11 +61,12 @@ const handleChangeFile = (e, { store, localStorage }) => {
 
   const fileName = file.name;
 
-  if (!isValidFileFormat(fileName)) {
+  if (!isValidFileFormat(file)) {
     fileInput.setCustomValidity(
       "Les formats acceptés sont jpg, jpeg et png",
     );
     fileInput.reportValidity();
+    fileInput.value = "";
     billFileState.fileUrl = null;
     billFileState.fileName = null;
     billFileState.billId = null;

@@ -62,15 +62,25 @@ describe("NewBill — couverture complémentaire", () => {
   describe("When I upload a file with an invalid format", () => {
     test("Then the file should not be uploaded to the store", () => {
       const createSpy = jest.spyOn(mockStore.bills(), "create");
-      uploadFile(screen.getByTestId("file"), "facture.pdf", "application/pdf");
+      const fileInput = screen.getByTestId("file");
+      uploadFile(fileInput, "facture.pdf", "application/pdf");
       expect(createSpy).not.toHaveBeenCalled();
+      expect(fileInput.value).toBe("");
+    });
+
+    test("Then a file with valid extension but invalid MIME should be rejected", () => {
+      const createSpy = jest.spyOn(mockStore.bills(), "create");
+      const fileInput = screen.getByTestId("file");
+      uploadFile(fileInput, "facture.jpg", "application/pdf");
+      expect(createSpy).not.toHaveBeenCalled();
+      expect(fileInput.value).toBe("");
     });
   });
 
   describe("When I upload a file with a valid format", () => {
     test("Then the file should be uploaded to the store", async () => {
       const createSpy = jest.spyOn(mockStore.bills(), "create");
-      uploadFile(screen.getByTestId("file"), "facture.jpg");
+      uploadFile(screen.getByTestId("file"), "facture.jpg", "image/jpeg");
       await waitFor(() => expect(createSpy).toHaveBeenCalled());
     });
   });
