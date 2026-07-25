@@ -9,6 +9,8 @@ Ce dossier contient un rapport détaillé par bug corrigé, dans l'ordre de rés
 | 03 | [Bug NewBill — Validation du justificatif](./03-bug-newbill.md) | Bug hunt — Bills | ✅ Corrigé |
 | 04 | [Bug Dashboard — Sélection des tickets](./04-bug-dashboard.md) | Bug hunt — Dashboard | ✅ Corrigé |
 | 05 | [Tests couverture Bills & NewBill](./05-tests-couverture.md) | Tests intégration (nouveaux fichiers) | ✅ ≥ 80 % |
+| — | [Critères d’évaluation (évaluateur)](./CRITERES-EVALUATION.md) | Checklist soutenance OC | 📋 Référence |
+| — | [Plan E2E parcours employé](./plan_E2E_parcours_employe.md) | Test E2E manuel | ✅ MD (PDF à exporter) |
 
 ## Convention de nommage
 
